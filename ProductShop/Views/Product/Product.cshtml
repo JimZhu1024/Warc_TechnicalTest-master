@@ -1,0 +1,19 @@
+﻿@model ProductShop.Models.ProductViewModel
+@{
+    ViewBag.Title = Resources.ProductResource.View;
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>@Model.Product.Title</h2>
+        <img class="product-image" src="@Model.Product.ImagePath" alt="@Model.Product.Title" />
+        <div class="price">
+            <span class="price-tag">@Resources.ProductResource.Price: </span>@Model.Product.Price
+        </div>
+        <div class="description">
+            <span class="description-tag">@Resources.ProductResource.Description: </span>@Model.Product.Description
+        </div>
+        <p><a class="btn btn-default" href="/edit/product/@Model.Product.Id">@Resources.ProductResource.Edit</a></p>
+    </div>
+</div>
+

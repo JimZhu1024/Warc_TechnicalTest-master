@@ -1,0 +1,24 @@
+﻿@model ProductShop.Models.HomepageViewModel
+@using System.Resources
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>@Resources.ProductResource.ProductShop</h1>
+    <p>@Resources.ProductResource.ProductShopDescription</p>
+</div>
+
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+    <div class="col-md-4">
+        <h2>@product.Title</h2>
+        <img class="product-image" src="@product.ImagePath" alt="@product.Title" />
+        <div class="price">
+            <span class="price-tag">@Resources.ProductResource.Price: </span>@product.Price
+        </div>
+        <p><a class="btn btn-default" href="/product/@product.Id">@Resources.ProductResource.View</a></p>
+    </div>
+    }
+</div>
